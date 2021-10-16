@@ -36,6 +36,6 @@ export const fetchStocks = (): IAppThunk => (dispatch, getState) => {
   const criteria = selectSearchCriteria(getState());
 
   searchStocks(criteria).then((newStocks) => {
-    setStocks(newStocks);
+    dispatch(setStocks(newStocks));
   });
 };

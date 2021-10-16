@@ -1,9 +1,9 @@
 import React, { ChangeEvent, ReactElement, useCallback, useEffect } from 'react';
 import { Input, InputGroup, InputLeftElement, InputProps } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-import { IRootState, useAppDispatch } from '../../store/store';
+import { useAppDispatch } from '../../store/store';
 import { useSelector } from 'react-redux';
-import { fetchStocks, setCriteria } from '../../store/slices/search/search-slice';
+import { fetchStocks, selectSearchCriteria, setCriteria } from '../../store/slices/search/search-slice';
 import { debounce } from '../../utils/timer-util';
 
 export interface ISearchProps extends InputProps {
@@ -15,7 +15,7 @@ export interface ISearchProps extends InputProps {
  */
 export const Search = ({ placeholder, onChange, ...restProps }: ISearchProps): ReactElement => {
   const dispatch = useAppDispatch();
-  const criteria = useSelector<IRootState, string>(state => state.search.criteria);
+  const criteria = useSelector(selectSearchCriteria);
 
   const debouncedFetch = useCallback(debounce(() => {
     dispatch(fetchStocks());
