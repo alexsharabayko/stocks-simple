@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { clearKeys } from './clear-keys-util';
+import { clearKeys } from '../clear-keys/clear-keys-util';
 
 const API_KEY = 'KGONOMYNYWXBYMGY';
 

@@ -4,7 +4,7 @@ import { Search } from '../../../components/search/Search';
 import { useAppDispatch } from '../../../store/store';
 import { useSelector } from 'react-redux';
 import { fetchStocks, selectSearchCriteria, setCriteria } from '../../../store/slices/search/search-slice';
-import { debounce } from '../../../utils/timer-util';
+import { debounce } from '../../../utils/timer/timer-util';
 
 export interface IExplorerSearchProps {
 }

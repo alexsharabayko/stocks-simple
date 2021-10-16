@@ -1,5 +1,5 @@
 import { IStock, IStockItem } from '../domains/stocks-domain';
-import { stocksApi } from '../utils/api-util';
+import { stocksApi } from '../utils/api/api-util';
 
 const STORAGE_KEY = 'portfolio-stocks';
 

@@ -1,5 +1,5 @@
 import { IStockItem, IStockSearchResult } from '../domains/stocks-domain';
-import { stocksApi } from '../utils/api-util';
+import { stocksApi } from '../utils/api/api-util';
 
 export const searchStocks = (criteria: string): Promise<IStockItem[]> => {
   return stocksApi.get<IStockSearchResult>('SYMBOL_SEARCH', { params: { keywords: criteria } })
