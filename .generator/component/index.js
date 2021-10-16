@@ -9,7 +9,7 @@ module.exports.ComponentGenerator = {
       name: 'folder',
       message: 'Select the folder of the component',
       default: 'components',
-      choices: ['components', 'screens'],
+      choices: ['components', 'screens', 'pages'],
     },
     {
       type: 'input',

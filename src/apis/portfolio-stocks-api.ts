@@ -1,4 +1,5 @@
-import { IStockItem } from '../domains/stocks-domain';
+import { IStock, IStockItem } from '../domains/stocks-domain';
+import { stocksApi } from '../utils/api-util';
 
 const STORAGE_KEY = 'portfolio-stocks';
 
@@ -35,4 +36,8 @@ export const apiRemovePortfolioStock = (symbol: string): Promise<void> => {
       return resolve();
     }, 500);
   });
+};
+
+export const apiFetchStockDetails = (symbol: string): Promise<IStock> => {
+  return stocksApi.get<IStock>('OVERVIEW', { params: { symbol } }).then(r => r.data);
 };

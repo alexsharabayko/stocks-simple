@@ -9,6 +9,7 @@ import {
 import { useSelector } from 'react-redux';
 import { PortfolioItem } from './components/PortfolioItem';
 import { IStockItem } from '../../domains/stocks-domain';
+import { useHistory } from 'react-router';
 
 export interface IPortfolioProps {
 }
@@ -17,6 +18,7 @@ export interface IPortfolioProps {
  * Portfolio Component Description
  */
 export const Portfolio = ({}: IPortfolioProps): ReactElement => {
+  const history = useHistory();
   const dispatch = useAppDispatch();
   const items = useSelector(selectPortfolioStocks);
 
@@ -26,6 +28,10 @@ export const Portfolio = ({}: IPortfolioProps): ReactElement => {
 
   const removeItem = (item: IStockItem): void => {
     dispatch(removePortfolioStock(item.symbol));
+  };
+
+  const navigateToDetails = (item: IStockItem): void => {
+    history.push(`/stock-details/${item.symbol}`);
   };
 
   return (
@@ -43,8 +49,14 @@ export const Portfolio = ({}: IPortfolioProps): ReactElement => {
 
         <Tbody>
           {items.map(item => {
-            return <PortfolioItem key={item.symbol} item={item} onRemove={() => removeItem(item)} onView={() => {
-            }}/>;
+            return (
+              <PortfolioItem
+                key={item.symbol}
+                item={item}
+                onRemove={() => removeItem(item)}
+                onView={() => navigateToDetails(item)}
+              />
+            );
           })}
         </Tbody>
       </Table>
