@@ -4,6 +4,7 @@ import { apiFetchStockDetails } from '../../apis/portfolio-stocks-api';
 import { IStock } from '../../domains/stocks-domain';
 import { Box, Heading, Button } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
+import { formatNumber } from '../../utils/number/number-util';
 
 export interface IStockDetailsProps {
 }
@@ -43,7 +44,7 @@ export const StockDetails = ({}: IStockDetailsProps): ReactElement => {
 
       <Box mb={5}>
         <strong>Market Capitalization: </strong>
-        <span>{stock.marketCapitalization}</span>
+        <span>{formatNumber(stock.marketCapitalization)}</span>
       </Box>
 
       <Box>{stock.description}</Box>
