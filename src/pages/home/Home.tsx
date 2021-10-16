@@ -20,7 +20,7 @@ export const Home = ({}: IHomeProps): ReactElement => {
         <Explorer />
       </GridItem>
 
-      <GridItem borderColor="gray.200" borderLeft="1px">
+      <GridItem borderColor="gray.200" borderLeftWidth="1px">
         <Portfolio />
       </GridItem>
     </Grid>
