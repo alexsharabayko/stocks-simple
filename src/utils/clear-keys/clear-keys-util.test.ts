@@ -23,13 +23,14 @@ describe('clearKeys util', () => {
     const dirtyObj = {
       Name: name,
       AGE: age,
+      IsChild: isChild,
     };
     const cleanObj = clearKeys(dirtyObj);
 
     expect(cleanObj.name).toBe(name);
-    expect(cleanObj.aGE).toBe(age);
+    expect(cleanObj.AGE).toBe(age);
+    expect(cleanObj.isChild).toBe(isChild);
     expect(cleanObj.Name).toBeUndefined();
-    expect(cleanObj.AGE).toBeUndefined();
   });
 
   it('should remove extra numbers', () => {

@@ -59,3 +59,9 @@ Project written on React + Redux Toolkit + Chakra UI
 - It's better increase test coverage (now it's very low, just for presentation)
 
 ## What should be clarified if it wasn't just a homework task
+
+- What we should to show if portfolio is empty
+- What we should to show if a stock details is not loaded
+- Loading states: on portfolio load, on details load, add adding a stock, on removing a stock
+- Do we need to show any confirmation on remove click?
+- Consider ability of bulk removing

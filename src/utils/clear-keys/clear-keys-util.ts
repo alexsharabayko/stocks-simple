@@ -10,7 +10,7 @@ export const clearKeys = (obj: any): any => {
       const value = clearKeys(obj[key]);
       let cleanKey = NUM_PREFIX_REG.test(key) ? key.replace(NUM_PREFIX_REG, '') : key;
 
-      if (cleanKey && cleanKey.length) {
+      if (cleanKey && cleanKey.length && cleanKey.toUpperCase() !== cleanKey) {
         cleanKey = cleanKey.charAt(0).toLowerCase() + cleanKey.substring(1);
       }
 
