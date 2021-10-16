@@ -25,7 +25,7 @@ export const Main = ({}: IMainProps): ReactElement => {
         <Explorer />
       </GridItem>
 
-      <GridItem bg="tomato">
+      <GridItem borderColor="gray.200" borderLeft="1px">
         <Portfolio />
       </GridItem>
     </Grid>

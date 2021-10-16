@@ -1,10 +1,12 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit'
 import { searchSlice } from './slices/search/search-slice';
 import { useDispatch } from 'react-redux';
+import { portfolioSlice } from './slices/portfolio/portfolio-slice';
 
 export const store = configureStore({
   reducer: {
     search: searchSlice.reducer,
+    portfolio: portfolioSlice.reducer,
   },
 });
 

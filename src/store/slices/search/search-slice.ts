@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IAppThunk, IRootState } from '../../store';
 import { Selector } from 'react-redux';
-import { searchStocks } from '../../../apis/stocks-api';
 import { IStockItem } from '../../../domains/stocks-domain';
+import { searchStocks } from '../../../apis/search-stocks-api';
 
 export interface ISearchState {
   criteria: string;
@@ -15,7 +15,7 @@ const initialState: ISearchState = {
 };
 
 export const searchSlice = createSlice({
-  name: 'counter',
+  name: 'search',
   initialState,
   reducers: {
     setCriteria: (state: ISearchState, action: PayloadAction<string>) => {
