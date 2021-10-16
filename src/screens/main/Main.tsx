@@ -18,7 +18,7 @@ export const Main = ({}: IMainProps): ReactElement => {
       templateColumns="repeat(2, 1fr)"
     >
       <GridItem colSpan={2} bg="papayawhip">
-        <Header>Content here</Header>
+        <Header>Stock Homework App</Header>
       </GridItem>
 
       <GridItem>
