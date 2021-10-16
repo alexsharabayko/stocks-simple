@@ -1,0 +1,14 @@
+import React from 'react';
+import { {{properCase name}} } from './{{kebabCase name}}.component';
+import { withKnobs } from '@storybook/addon-knobs/dist';
+
+export default {
+    title: 'REACT/{{properCase name}}',
+    decorators: [withKnobs],
+    component: {{properCase name}},
+};
+
+export const withParameters = () => (
+    <{{properCase name}}></{{properCase name}}>
+);
+
