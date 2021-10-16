@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { Explorer } from '../../screens/explorer/Explorer';
 import { Portfolio } from '../../screens/portfolio/Portfolio';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid, GridItem, Flex, Box } from '@chakra-ui/react';
 
 export interface IHomeProps {
 }
@@ -11,18 +11,17 @@ export interface IHomeProps {
 */
 export const Home = ({}: IHomeProps): ReactElement => {
   return (
-    <Grid
-      h="100%"
-      templateRows="auto"
-      templateColumns="50% 50%"
+    <Flex
+      h={{ 'base': 'auto', md: '100%' }}
+      direction={{ base: 'column-reverse', md: 'row' }}
     >
-      <GridItem>
+      <Box flex="1">
         <Explorer />
-      </GridItem>
+      </Box>
 
-      <GridItem borderColor="gray.200" borderLeftWidth="1px">
+      <Box flex="1" borderColor="gray.200" borderLeftWidth={{ base: 0, md: 1 }}>
         <Portfolio />
-      </GridItem>
-    </Grid>
+      </Box>
+    </Flex>
   );
 };
