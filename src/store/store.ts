@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit'
 import { searchSlice } from './slices/search/search-slice';
 import { useDispatch } from 'react-redux';
 
@@ -12,4 +12,6 @@ export const store = configureStore({
 export type IRootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type IAppDispatch = typeof store.dispatch;
+export type IAppThunk<T = void> = ThunkAction<T, IRootState, unknown, Action<string>>;
+
 export const useAppDispatch = () => useDispatch<IAppDispatch>();
