@@ -35,7 +35,11 @@ export const selectSearchStocks: Selector<IRootState, IStockItem[]> = state => s
 export const fetchStocks = (): IAppThunk => (dispatch, getState) => {
   const criteria = selectSearchCriteria(getState());
 
-  searchStocks(criteria).then((newStocks) => {
-    dispatch(setStocks(newStocks));
-  });
+  if (criteria) {
+    searchStocks(criteria).then((newStocks) => {
+      dispatch(setStocks(newStocks));
+    });
+  } else {
+    dispatch(setStocks([]));
+  }
 };
